@@ -27,15 +27,23 @@ export const Header: React.FC = () => {
           <li className="menu-item menu-item--user">
             <UserIcon /> Minha conta
             <ul className="menu-item__dropdown">
-              <li>
-                <a href="#">Meus pedidos</a>
+              <li className="menu-item__dropdown__list">
+                <a href="#">Entrar</a>
               </li>
-              <li>
-                <a href="#">Minha conta</a>
+              <li className="menu-item__dropdown__list">
+                <a href="#">Cadastrar</a>
               </li>
-              <li>
-                <a href="#">Sair</a>
-              </li>
+              <ul className="menu-item__dropdown__account">
+                <li>
+                  <a href="#">Meus pedidos</a>
+                </li>
+                <li>
+                  <a href="#">Minha conta</a>
+                </li>
+                <li>
+                  <a href="#">Sair</a>
+                </li>
+              </ul>
             </ul>
           </li>
           <li className="menu-item">
@@ -58,15 +66,23 @@ export const Header: React.FC = () => {
             <li className="menu-item menu-item--user">
               <UserIcon /> Minha conta
               <ul className="menu-item__dropdown">
-                <li>
-                  <a href="#">Meus pedidos</a>
+                <li className="menu-item__dropdown__list">
+                  <a href="#">Entrar</a>
                 </li>
-                <li>
-                  <a href="#">Minha conta</a>
+                <li className="menu-item__dropdown__list">
+                  <a href="#">Cadastrar</a>
                 </li>
-                <li>
-                  <a href="#">Sair</a>
-                </li>
+                <ul className="menu-item__dropdown__account">
+                  <li>
+                    <a href="#">Meus pedidos</a>
+                  </li>
+                  <li>
+                    <a href="#">Minha conta</a>
+                  </li>
+                  <li>
+                    <a href="#">Sair</a>
+                  </li>
+                </ul>
               </ul>
             </li>
             <li className="menu-item">
