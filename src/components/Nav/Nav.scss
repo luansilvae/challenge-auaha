@@ -1,0 +1,33 @@
+nav {
+  width: 100vw;
+  border-top: 2px solid var(--gray-light);
+
+  @media(max-width: 768px) {
+    display: none;
+    visibility: hidden;
+  }
+
+  .nav-list {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    &__item {
+      &__link {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--dark);
+      }
+    }
+  }
+}
