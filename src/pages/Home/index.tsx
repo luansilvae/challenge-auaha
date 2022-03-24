@@ -1,11 +1,13 @@
 import React from "react"
+import { Carousel } from "../../components/Carousel"
 
-import style from "./Home.module.scss"
+import "./Home.scss"
 
 export const Home: React.FC = () => {
   return (
-    <div className={style.Container}>
-      <h1>Main</h1>
-    </div>
+    <main>
+      <Carousel />
+      <h1>Main content</h1>
+    </main>
   )
 }
