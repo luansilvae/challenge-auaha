@@ -5,7 +5,7 @@ import "./Testimonials.scss"
 export const Testimonials: React.FC = () => {
   return (
     <section className="testimonials">
-      <h2 className="testimonials__title">O QUE OS CLIENTES DIZEM</h2>
+      <h1 className="testimonials__title">O QUE OS CLIENTES DIZEM</h1>
 
       <div className="testimonials__grid">
         <div className="grid__card">

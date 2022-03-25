@@ -1,6 +1,7 @@
 import React from "react"
 import { Carousel } from "../../components/Carousel"
 import { GridGallery } from "../../components/GridGallery"
+import { Newsletter } from "../../components/Newsletter"
 import { OffersSection } from "../../components/OffersSection"
 import { PaymentBanner } from "../../components/PaymentBanner"
 import { Testimonials } from "../../components/Testimonials"
@@ -13,6 +14,7 @@ export const Home: React.FC = () => {
       <GridGallery />
       <OffersSection />
       <Testimonials />
+      <Newsletter />
     </main>
   )
 }
