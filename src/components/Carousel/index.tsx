@@ -1,5 +1,5 @@
 import React from "react"
-import { Navigation, Pagination, A11y } from "swiper"
+import { Navigation, Pagination, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "./Carousel.scss"
@@ -13,32 +13,40 @@ import "swiper/scss/pagination"
 export const Carousel: React.FC = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, A11y]}
+      modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
       grabCursor={true}
       navigation
+      loop={true}
+      slidesPerGroup={1}
+      centeredSlides={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false
+      }}
       pagination={{
         clickable: true
       }}
+      className="header-carousel"
     >
       <SwiperSlide>
-        <div className="swiper-img">
+        <div className="header-carousel__slide">
           <img src={CarouselBackground} alt="Carousel image" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="swiper-img">
+        <div className="header-carousel__slide">
           <img src={CarouselBackground} alt="Carousel image" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="swiper-img">
+        <div className="header-carousel__slide">
           <img src={CarouselBackground} alt="Carousel image" />
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="swiper-img">
+        <div className="header-carousel__slide">
           <img src={CarouselBackground} alt="Carousel image" />
         </div>
       </SwiperSlide>

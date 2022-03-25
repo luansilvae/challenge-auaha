@@ -1,4 +1,4 @@
-.swiper {
+.header-carousel {
   height: 280px;
 
   @media (min-width: 768px) {
@@ -9,7 +9,7 @@
     height: 644px;
   }
 
-  .swiper-img {
+  &__slide {
     height: 100%;
 
     > img {
