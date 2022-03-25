@@ -2,7 +2,7 @@ import React from "react"
 import { Navigation, Pagination, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import "./Carousel.scss"
+import "./HeaderCarousel.scss"
 
 import CarouselBackground from "../../assets/carousel-background.png"
 
@@ -10,7 +10,7 @@ import "swiper/scss"
 import "swiper/scss/navigation"
 import "swiper/scss/pagination"
 
-export const Carousel: React.FC = () => {
+export const HeaderCarousel: React.FC = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}

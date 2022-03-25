@@ -1,7 +1,5 @@
 .testimonials {
-  max-width: 1340px;
-  padding: 75px 20px 83px;
-  margin: 0 auto;
+  padding: 75px 0 83px;
 
   &__grid {
     display: grid;
@@ -37,7 +35,6 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: 14px;
-        letter-spacing: 1px;
       }
 
       p {
