@@ -162,6 +162,19 @@ export const OffersSection: React.FC = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+
+      <div className="offers__news">
+        <div className="news__card">
+          <div className="card__content">
+            <h2>Novidades</h2>
+          </div>
+        </div>
+        <div className="news__card">
+          <div className="card__content">
+            <h2>Destaques</h2>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
