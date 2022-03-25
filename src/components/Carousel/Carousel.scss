@@ -1,14 +1,16 @@
 .swiper {
+  height: 280px;
+
+  @media (min-width: 768px) {
+    height: 400px;
+  }
+
+  @media (min-width:1280px) {
+    height: 644px;
+  }
+
   .swiper-img {
-    max-width: 100vw;
-    width: 100%;
-
-    height: 300px;
-
-    @media (min-width: 768px) {
-      height: 100%;
-      max-height: calc(100vh - 200px);
-    }
+    height: 100%;
 
     > img {
       width: 100%;

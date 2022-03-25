@@ -1,13 +1,14 @@
 import React from "react"
 import { Carousel } from "../../components/Carousel"
-
-import "./Home.scss"
+import { GridGallery } from "../../components/GridGallery"
+import { PaymentBanner } from "../../components/PaymentBanner"
 
 export const Home: React.FC = () => {
   return (
     <main>
       <Carousel />
-      <h1>Main content</h1>
+      <PaymentBanner />
+      <GridGallery />
     </main>
   )
 }
