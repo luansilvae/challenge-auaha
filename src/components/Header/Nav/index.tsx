@@ -2,6 +2,8 @@ import React from "react"
 
 import "./Nav.scss"
 
+import ProductImage from "../../../assets/product-image.png"
+
 export const Nav: React.FC = () => {
   return (
     <nav>
@@ -37,6 +39,77 @@ export const Nav: React.FC = () => {
           </a>
         </li>
       </ul>
+
+      <div className="dropdown-nav">
+        <div className="dropdown-nav__list">
+          <ul className="list__product">
+            <li>
+              <strong>Folheado</strong>
+            </li>
+            <li>
+              <a href="#">ANEL</a>
+            </li>
+            <li>
+              <a href="#">SOLITÁRIA</a>
+            </li>
+            <li>
+              <a href="#">CRISTAL</a>
+            </li>
+            <li>
+              <a href="#">PÉROLA</a>
+            </li>
+            <li>
+              <a href="#">ZIRCÔNIA</a>
+            </li>
+          </ul>
+
+          <ul className="list__product">
+            <li>
+              <strong>Prata</strong>
+            </li>
+            <li>
+              <a href="#">ANEL</a>
+            </li>
+            <li>
+              <a href="#">SOLITÁRIA</a>
+            </li>
+            <li>
+              <a href="#">CRISTAL</a>
+            </li>
+            <li>
+              <a href="#">PÉROLA</a>
+            </li>
+            <li>
+              <a href="#">ZIRCÔNIA</a>
+            </li>
+          </ul>
+
+          <ul className="list__product">
+            <li>
+              <strong>Ouro</strong>
+            </li>
+            <li>
+              <a href="#">ANEL</a>
+            </li>
+            <li>
+              <a href="#">SOLITÁRIA</a>
+            </li>
+            <li>
+              <a href="#">CRISTAL</a>
+            </li>
+            <li>
+              <a href="#">PÉROLA</a>
+            </li>
+            <li>
+              <a href="#">ZIRCÔNIA</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="dropdown-nav__img">
+          <img src={ProductImage} alt="Product Image" />
+        </div>
+      </div>
     </nav>
   )
 }
