@@ -5,6 +5,7 @@ import { Newsletter } from "../../components/Newsletter"
 import { OffersSection } from "../../components/OffersSection"
 import { PaymentBanner } from "../../components/PaymentBanner"
 import { Testimonials } from "../../components/Testimonials"
+import { FloatButton } from "../../components/FloatButton"
 
 import "./Home.scss"
 
@@ -19,6 +20,8 @@ export const Home: React.FC = () => {
         <Testimonials />
         <Newsletter />
       </article>
+
+      <FloatButton />
     </main>
   )
 }

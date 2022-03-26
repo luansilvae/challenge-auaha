@@ -1,0 +1,47 @@
+.float {
+  max-width: 1340px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-end;
+
+  position: sticky;
+  z-index: 100;
+  bottom: 20px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 50px;
+    border-radius: 30px;
+    background: var(--white);
+    box-shadow: 4px 0px 12px 3px rgba(0, 0, 0, 0.157);
+
+    .button__whatsapp {
+      height: 100%;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0ce21c;
+      border-radius: 30px;
+    }
+
+    .button__text {
+      padding: 0 20px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+
+      display: none;
+
+      @media (min-width: 768px) {
+        display: unset;
+      }
+    }
+  }
+}
