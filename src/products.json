@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "src/assets/product01.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 200.99,
+      "actualValue": 149.90,
+      "installments": 3
+    }
+  },
+  {
+    "id": 2,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "src/assets/product02.png",
+    "labels": {
+      "discount": 20,
+      "freeShipping": false,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 234.99,
+      "installments": 5
+    }
+  },
+  {
+    "id": 3,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "src/assets/product03.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 234.99,
+      "installments": 10
+    }
+  },
+  {
+    "id": 4,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "src/assets/product04.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 234.99,
+      "installments": 3
+    }
+  }
+]

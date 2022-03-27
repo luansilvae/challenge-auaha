@@ -2,23 +2,21 @@ import React from "react"
 import { A11y, Navigation, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import Product01 from "../../assets/product01.png"
-import Product02 from "../../assets/product02.png"
-import Product03 from "../../assets/product03.png"
-import Product04 from "../../assets/product04.png"
-
 import "./OffersSection.scss"
 
 import "swiper/scss"
 import "swiper/scss/navigation"
 import "swiper/scss/pagination"
 import { CartIcon } from "../Icons"
+import { useProducts } from "../../hooks/useProducts"
+import { formattedCurrency } from "../../utils/formattedCurrency"
 
 export const OffersSection: React.FC = () => {
+  const { products } = useProducts()
+
   return (
     <section className="offers">
       <h1 className="offers__title">PROMOÇÕES</h1>
-
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={0}
@@ -39,128 +37,65 @@ export const OffersSection: React.FC = () => {
           }
         }}
       >
-        <SwiperSlide>
-          <div className="carousel__item">
-            <div className="item__banner">
-              <img src={Product01} alt="Produto 1" />
-              <span className="item__banner__offer-tag">10% OFF</span>
-              <button className="item__banner__preview-button">Espiar</button>
-              <div className="item__banner__buttons">
-                <button className="button button--black">Mais Vendidos</button>
-                <button className="button button--gray">Frete Grátis</button>
-              </div>
-            </div>
-            <div className="item__content">
-              <span className="item__content__description">
-                Anel Banhado Ouro Com Zirconia
-              </span>
-              <div className="item__content__price">
-                <span className="price__info price__info--from">
-                  De R$ 188,00
-                </span>
-                <strong className="price__info price__info--for">
-                  Por R$ 188,00
-                </strong>
-                <span className="price__info price__info--installments">
-                  6X R$ 31,33 Sem Juros
-                </span>
-              </div>
+        {products &&
+          products.map(product => (
+            <SwiperSlide key={product.id}>
+              <div className="carousel__item">
+                <div className="item__banner">
+                  <img src={product.image} alt="Produto 1" />
 
-              <button className="item__content__add-to-cart">
-                <CartIcon />
-                <span>Adicionar à sacola</span>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="carousel__item">
-            <div className="item__banner">
-              <img src={Product02} alt="Produto 1" />
-              <button className="item__banner__preview-button">Espiar</button>
-            </div>
-            <div className="item__content">
-              <span className="item__content__description">
-                Anel Banhado Ouro Com Zirconia
-              </span>
-              <div className="item__content__price">
-                <strong className="price__info price__info--for">
-                  Por R$ 188,00
-                </strong>
-                <span className="price__info price__info--installments">
-                  6X R$ 31,33 Sem Juros
-                </span>
-              </div>
+                  {product.labels.discount && (
+                    <span className="item__banner__offer-tag">
+                      {product.labels.discount}% OFF
+                    </span>
+                  )}
 
-              <button className="item__content__add-to-cart">
-                <CartIcon />
-                Adicionar à sacola
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="carousel__item">
-            <div className="item__banner">
-              <img src={Product03} alt="Produto 1" />
-              <button className="item__banner__preview-button">Espiar</button>
-              <div className="item__banner__buttons">
-                <button className="button button--black">Mais Vendidos</button>
-              </div>
-            </div>
-            <div className="item__content">
-              <span className="item__content__description">
-                Anel Banhado Ouro Com Zirconia
-              </span>
-              <div className="item__content__price">
-                <strong className="price__info price__info--for">
-                  Por R$ 188,00
-                </strong>
-                <span className="price__info price__info--installments">
-                  6X R$ 31,33 Sem Juros
-                </span>
-              </div>
+                  <button className="item__banner__preview-button">
+                    Espiar
+                  </button>
+                  <div className="item__banner__buttons">
+                    {product.labels.bestSellers && (
+                      <button className="button button--black">
+                        Mais Vendidos
+                      </button>
+                    )}
 
-              <button className="item__content__add-to-cart">
-                <CartIcon />
-                Adicionar à sacola
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="carousel__item">
-            <div className="item__banner">
-              <img src={Product04} alt="Produto 1" />
-              <span className="item__banner__offer-tag">10% OFF</span>
-              <button className="item__banner__preview-button">Espiar</button>
-              <div className="item__banner__buttons">
-                <button className="button button--gray">Frete Grátis</button>
-              </div>
-            </div>
-            <div className="item__content">
-              <span className="item__content__description">
-                Anel Banhado Ouro Com Zirconia
-              </span>
-              <div className="item__content__price">
-                <span className="price__info price__info--from">
-                  De R$ 188,00
-                </span>
-                <strong className="price__info price__info--for">
-                  Por R$ 188,00
-                </strong>
-                <span className="price__info price__info--installments">
-                  6X R$ 31,33 Sem Juros
-                </span>
-              </div>
+                    {product.labels.freeShipping && (
+                      <button className="button button--gray">
+                        Frete Grátis
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <div className="item__content">
+                  <span className="item__content__description">
+                    {product.name}
+                  </span>
+                  <div className="item__content__price">
+                    {product.price.oldValue && (
+                      <span className="price__info price__info--from">
+                        De {formattedCurrency(product.price.oldValue)}
+                      </span>
+                    )}
 
-              <button className="item__content__add-to-cart">
-                <CartIcon />
-                Adicionar à sacola
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
+                    <strong className="price__info price__info--for">
+                      Por {formattedCurrency(product.price.actualValue)}
+                    </strong>
+                    <span className="price__info price__info--installments">
+                      {`${product.price.installments}X ${formattedCurrency(
+                        product.price.actualValue / product.price.installments
+                      )} Sem Juros`}
+                    </span>
+                  </div>
+
+                  <button className="item__content__add-to-cart">
+                    <CartIcon />
+                    <span>Adicionar à sacola</span>
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
       </Swiper>
 
       <div className="offers__news">
