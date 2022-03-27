@@ -183,6 +183,7 @@
       background: var(--white);
       border-top: 2px solid var(--gray-light);
       animation: slideTop 400ms;
+      overflow-y: auto;
 
       @include menu-desktop {
         display: none;
