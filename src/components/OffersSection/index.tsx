@@ -68,7 +68,7 @@ export const OffersSection: React.FC = () => {
 
               <button className="item__content__add-to-cart">
                 <CartIcon />
-                Adicionar à sacola
+                <span>Adicionar à sacola</span>
               </button>
             </div>
           </div>
