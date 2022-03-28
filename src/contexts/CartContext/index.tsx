@@ -8,7 +8,15 @@ export const CartContext = createContext({} as CartContextData)
 export function CartProvider({ children }: CartProps) {
   const { products } = useProducts()
 
-  const [cart, setCart] = useState<any[]>([])
+  const [cart, setCart] = useState<any[]>(() => {
+    const storageValue = localStorage.getItem("cart")
+
+    if (storageValue) {
+      return JSON.parse(storageValue)
+    } else {
+      return [] as Products[]
+    }
+  })
 
   const handleAddToCart = useCallback(
     (productId: number) => {
@@ -18,59 +26,62 @@ export function CartProvider({ children }: CartProps) {
         const isProductInCart = prev.find(product => product.id === productId)
 
         if (isProductInCart) {
-          return prev.map(product =>
+          const additionalProduct = prev.map(product =>
             product.id === productId
               ? { ...product, amount: product.amount + 1 }
               : product
           )
+
+          localStorage.setItem("cart", JSON.stringify(additionalProduct))
+
+          return additionalProduct
+        } else {
+          const newProductAdded = [...prev, { ...productAdded, amount: 1 }]
+
+          localStorage.setItem("cart", JSON.stringify(newProductAdded))
+
+          return newProductAdded
         }
-        return [...prev, { ...productAdded, amount: 1 }]
       })
     },
     [products]
   )
 
   const handleRemoveFromCart = useCallback((productId: number) => {
-    setCart((prev: Products[]) =>
-      prev.reduce((ack, item) => {
-        if (item.id === productId) {
-          if (item.amount === 1) return ack
-          return [...ack, { ...item, amount: item.amount - 1 }]
+    setCart((prev: Products[]) => {
+      const cartRemovedProduct = prev.reduce((acc, product) => {
+        if (product.id === productId) {
+          if (product.amount === 1) return acc
+          return [...acc, { ...product, amount: product.amount - 1 }]
         } else {
-          return [...ack, item]
+          return [...acc, product]
         }
       }, [] as Products[])
-    )
+
+      localStorage.setItem("cart", JSON.stringify(cartRemovedProduct))
+      return cartRemovedProduct
+    })
   }, [])
-
-  // const handleRemoveFromCart = useCallback(
-  //   (productId: number) => {
-  //     const filteredCart = cart.filter(
-  //       cartProduct => cart.indexOf(cartProduct) !== productId
-  //     )
-
-  //     setCart(filteredCart)
-  //   },
-  //   [cart]
-  // )
 
   const isCartEmpty = useMemo(() => cart.length === 0, [cart.length])
 
   const ammountProducts = useMemo(
-    () => cart.reduce((ack: number, item) => ack + item.amount, 0),
+    () => cart.reduce((acc: number, product) => acc + product.amount, 0),
     [cart]
   )
 
   const totalProducts = useMemo(
     () =>
       cart.reduce(
-        (ack: number, item) => ack + item.amount * item.price.actualValue,
+        (acc: number, product) =>
+          acc + product.amount * product.price.actualValue,
         0
       ),
     [cart]
   )
 
   const clearCart = () => {
+    localStorage.removeItem("cart")
     setCart([])
   }
 

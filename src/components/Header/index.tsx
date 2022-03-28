@@ -36,8 +36,6 @@ export const Header: React.FC = () => {
     handleRemoveFromCart
   } = useCart()
 
-  console.log(cart)
-
   return (
     <header className="header">
       <div className="header__top-bar">
