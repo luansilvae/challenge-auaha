@@ -12,5 +12,5 @@ export interface CartContextData {
   isCartEmpty: boolean
   cart: Products[]
   totalProducts: number
-  ammountProducts: number
+  amountProducts: number
 }

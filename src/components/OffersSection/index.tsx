@@ -31,7 +31,7 @@ export const OffersSection: React.FC = () => {
         preventInteractionOnTransition={true}
         loopPreventsSlide={true}
         grabCursor={false}
-        loop={false}
+        loop
         breakpoints={{
           640: {
             slidesPerView: 2

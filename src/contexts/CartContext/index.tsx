@@ -65,7 +65,7 @@ export function CartProvider({ children }: CartProps) {
 
   const isCartEmpty = useMemo(() => cart.length === 0, [cart.length])
 
-  const ammountProducts = useMemo(
+  const amountProducts = useMemo(
     () => cart.reduce((acc: number, product) => acc + product.amount, 0),
     [cart]
   )
@@ -93,7 +93,7 @@ export function CartProvider({ children }: CartProps) {
         handleRemoveFromCart,
         clearCart,
         isCartEmpty,
-        ammountProducts,
+        amountProducts,
         totalProducts
       }}
     >

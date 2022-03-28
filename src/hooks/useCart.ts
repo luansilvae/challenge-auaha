@@ -8,7 +8,7 @@ export const useCart = () => {
     handleRemoveFromCart,
     clearCart,
     isCartEmpty,
-    ammountProducts,
+    amountProducts,
     totalProducts
   } = useContext(CartContext)
 
@@ -18,7 +18,7 @@ export const useCart = () => {
     handleRemoveFromCart,
     clearCart,
     isCartEmpty,
-    ammountProducts,
+    amountProducts,
     totalProducts
   }
 }

@@ -3,18 +3,11 @@ import "./Header.scss"
 
 import LogoAuaha from "../../assets/logo.svg"
 
-import {
-  PhoneIcon,
-  UserIcon,
-  CartIcon,
-  CloseIcon,
-  MenuIcon,
-  RemoveIcon
-} from "../Icons"
+import { PhoneIcon, UserIcon, CartIcon, CloseIcon, MenuIcon } from "../Icons"
 import { Search } from "../Search"
 import { Nav } from "./Nav"
 import { useCart } from "../../hooks/useCart"
-import { formattedCurrency } from "../../utils/formattedCurrency"
+import { Cart } from "./Cart"
 
 export const Header: React.FC = () => {
   const [activeMenu, setaActiveMenu] = useState<boolean>(false)
@@ -27,14 +20,7 @@ export const Header: React.FC = () => {
 
   const handleOpenCart = useCallback(() => setOpenCart(state => !state), [])
 
-  const {
-    cart,
-    isCartEmpty,
-    ammountProducts,
-    totalProducts,
-    clearCart,
-    handleRemoveFromCart
-  } = useCart()
+  const { amountProducts } = useCart()
 
   return (
     <header className="header">
@@ -76,58 +62,10 @@ export const Header: React.FC = () => {
 
           <button className="cart-button" onClick={handleOpenCart}>
             <CartIcon />
-            <span className="cart-button__counter">{ammountProducts}</span>
+            <span className="cart-button__counter">{amountProducts}</span>
           </button>
 
-          <div
-            className={`cart-section cart-section--${
-              openCart ? "active" : "hidden"
-            }`}
-          >
-            {isCartEmpty ? (
-              <strong>Sua sacola está vazia.</strong>
-            ) : (
-              <div className="cart-section__content">
-                <ul className="content__list">
-                  {cart.map((cartProduct, index) => (
-                    <li key={index} className="list__product">
-                      <img src={cartProduct.image} alt={cartProduct.name} />
-                      <div className="product__info">
-                        <h4>{cartProduct.name}</h4>
-
-                        <span>
-                          Qtd. {cartProduct.amount}
-                          <strong>
-                            {formattedCurrency(
-                              cartProduct.amount * cartProduct.price.actualValue
-                            )}
-                          </strong>
-                        </span>
-                      </div>
-                      <button
-                        className="product__button"
-                        onClick={() => handleRemoveFromCart(cartProduct.id)}
-                      >
-                        <RemoveIcon />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <div className="content__submit">
-                  <div className="submit-header">
-                    <span>
-                      Subtotal
-                      <strong>{formattedCurrency(totalProducts)}</strong>
-                    </span>
-
-                    <button onClick={clearCart}>Limpar sacola</button>
-                  </div>
-
-                  <button>Finalizar compra</button>
-                </div>
-              </div>
-            )}
-          </div>
+          <Cart openCart={openCart} />
 
           <button className="toggle-menu-button" onClick={handleActiveMenu}>
             {activeMenu ? <CloseIcon /> : <MenuIcon />}
