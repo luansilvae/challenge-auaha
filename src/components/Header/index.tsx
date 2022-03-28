@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
             }`}
           >
             {isCartEmpty ? (
-              <strong>Seu carrinho está vazio.</strong>
+              <strong>Sua sacola está vazia.</strong>
             ) : (
               <div className="cart-section__content">
                 <ul className="content__list">
@@ -120,7 +120,7 @@ export const Header: React.FC = () => {
                       <strong>{formattedCurrency(totalProducts)}</strong>
                     </span>
 
-                    <button onClick={clearCart}>Limpar carrinho</button>
+                    <button onClick={clearCart}>Limpar sacola</button>
                   </div>
 
                   <button>Finalizar compra</button>

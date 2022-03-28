@@ -2,18 +2,18 @@ import React from "react"
 import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import "./OffersSection.scss"
-
-import "swiper/scss"
-import "swiper/scss/navigation"
+import { useCart } from "../../hooks/useCart"
 import { CartIcon } from "../Icons"
 import { useProducts } from "../../hooks/useProducts"
 import { formattedCurrency } from "../../utils/formattedCurrency"
-import { useCart } from "../../hooks/useCart"
+import { notify } from "../../utils/notify"
+
+import "./OffersSection.scss"
+import "swiper/scss"
+import "swiper/scss/navigation"
 
 export const OffersSection: React.FC = () => {
   const { products } = useProducts()
-
   const { handleAddToCart } = useCart()
   return (
     <section className="offers">
@@ -96,7 +96,10 @@ export const OffersSection: React.FC = () => {
 
                   <button
                     className="item__content__add-to-cart"
-                    onClick={() => handleAddToCart(product.id)}
+                    onClick={() => {
+                      handleAddToCart(product.id)
+                      notify("Produto adicionado à sacola!")
+                    }}
                   >
                     <CartIcon />
                     <span>Adicionar à sacola</span>
