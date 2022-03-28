@@ -9,13 +9,13 @@ interface useProductsProps {
 }
 
 export function useProducts(): useProductsProps {
-  const [products, setProducts] = useState<Products[] | any>([])
+  const [products, setProducts] = useState<any[]>([])
   const [isFetching, setIsFetching] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     try {
-      const listProducts: Products[] = data
+      const listProducts: Products[] | any[] = data
 
       if (!listProducts) {
         setError("Não foi possível listar os produtos")
