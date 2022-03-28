@@ -11,6 +11,7 @@ import { notify } from "../../utils/notify"
 import "./OffersSection.scss"
 import "swiper/scss"
 import "swiper/scss/navigation"
+import { playSound } from "../../utils/playAudio"
 
 export const OffersSection: React.FC = () => {
   const { products } = useProducts()
@@ -99,6 +100,7 @@ export const OffersSection: React.FC = () => {
                     onClick={() => {
                       handleAddToCart(product.id)
                       notify("Produto adicionado à sacola!")
+                      playSound()
                     }}
                   >
                     <CartIcon />
