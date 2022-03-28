@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Anel banhado a ouro com zirconia",
-    "image": "src/assets/product01.png",
+    "image": "https://user-images.githubusercontent.com/86011816/160301123-65e6e550-94c8-47ca-8f62-08bbf3b99474.png",
     "labels": {
       "discount": 10,
       "freeShipping": true,
@@ -10,14 +10,14 @@
     },
     "price": {
       "oldValue": 200.99,
-      "actualValue": 149.90,
+      "actualValue": 100,
       "installments": 3
     }
   },
   {
     "id": 2,
     "name": "Anel banhado a ouro com zirconia",
-    "image": "src/assets/product02.png",
+    "image": "https://user-images.githubusercontent.com/86011816/160301130-34aeda40-7d9a-49bc-870c-cd635e7a7071.png",
     "labels": {
       "discount": 20,
       "freeShipping": false,
@@ -25,14 +25,14 @@
     },
     "price": {
       "oldValue": 188,
-      "actualValue": 234.99,
+      "actualValue": 100,
       "installments": 5
     }
   },
   {
     "id": 3,
     "name": "Anel banhado a ouro com zirconia",
-    "image": "src/assets/product03.png",
+    "image": "https://user-images.githubusercontent.com/86011816/160301131-a6a3034e-baac-4971-871a-8644ffd75e18.png",
     "labels": {
       "discount": 10,
       "freeShipping": true,
@@ -40,14 +40,14 @@
     },
     "price": {
       "oldValue": 188,
-      "actualValue": 234.99,
+      "actualValue": 100,
       "installments": 10
     }
   },
   {
     "id": 4,
     "name": "Anel banhado a ouro com zirconia",
-    "image": "src/assets/product04.png",
+    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
     "labels": {
       "discount": 10,
       "freeShipping": true,
@@ -55,7 +55,67 @@
     },
     "price": {
       "oldValue": 188,
-      "actualValue": 234.99,
+      "actualValue": 100,
+      "installments": 3
+    }
+  },
+  {
+    "id": 5,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 100,
+      "installments": 3
+    }
+  },
+  {
+    "id": 6,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 100,
+      "installments": 3
+    }
+  },
+  {
+    "id": 7,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 100,
+      "installments": 3
+    }
+  },
+  {
+    "id": 8,
+    "name": "Anel banhado a ouro com zirconia",
+    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
+    "labels": {
+      "discount": 10,
+      "freeShipping": true,
+      "bestSellers": true
+    },
+    "price": {
+      "oldValue": 188,
+      "actualValue": 100,
       "installments": 3
     }
   }

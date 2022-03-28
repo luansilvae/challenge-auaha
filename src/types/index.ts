@@ -12,4 +12,5 @@ export interface Products {
     actualValue: number
     installments: number
   }
+  amount: number
 }

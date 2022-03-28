@@ -1,30 +1,36 @@
 import React from "react"
-import { A11y, Navigation, Pagination } from "swiper"
+import { Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "./OffersSection.scss"
 
 import "swiper/scss"
 import "swiper/scss/navigation"
-import "swiper/scss/pagination"
 import { CartIcon } from "../Icons"
 import { useProducts } from "../../hooks/useProducts"
 import { formattedCurrency } from "../../utils/formattedCurrency"
+import { useCart } from "../../hooks/useCart"
 
 export const OffersSection: React.FC = () => {
   const { products } = useProducts()
 
+  const { handleAddToCart } = useCart()
   return (
     <section className="offers">
       <h1 className="offers__title">PROMOÇÕES</h1>
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={0}
-        slidesPerGroup={1}
-        grabCursor={true}
-        navigation
         className="offers__carousel"
-        loop={true}
+        modules={[Navigation]}
+        navigation
+        slidesPerView={1}
+        slidesPerGroup={1}
+        spaceBetween={0}
+        preventClicks={true}
+        preventClicksPropagation={true}
+        preventInteractionOnTransition={true}
+        loopPreventsSlide={true}
+        grabCursor={false}
+        loop={false}
         breakpoints={{
           640: {
             slidesPerView: 2
@@ -88,7 +94,10 @@ export const OffersSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <button className="item__content__add-to-cart">
+                  <button
+                    className="item__content__add-to-cart"
+                    onClick={() => handleAddToCart(product.id)}
+                  >
                     <CartIcon />
                     <span>Adicionar à sacola</span>
                   </button>
