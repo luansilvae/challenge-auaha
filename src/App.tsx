@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify"
 
 import "./styles/globalStyles.scss"
 import "react-toastify/dist/ReactToastify.css"
+import { Footer } from "./components/Footer"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         draggable
         pauseOnHover={false}
       />
+      <Footer />
     </BrowserRouter>
   )
 }
