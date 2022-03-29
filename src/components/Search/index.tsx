@@ -1,14 +1,32 @@
-import React from "react"
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react"
 import { SearchIcon } from "../Icons"
+import { useProducts } from "../../hooks/useProducts"
+import { Products } from "../../types"
 
 import "./Search.scss"
-
-import ProductImage from "../../assets/product01.png"
 interface SearchProps {
   className: string
 }
 
 export const Search: React.FC<SearchProps> = ({ className }) => {
+  const { products } = useProducts()
+  const [filteredProducts, setFilteredProducts] = useState<Products[]>([])
+
+  useEffect(() => setFilteredProducts(products), [products])
+
+  const handleSearch = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const filteredProducts = products.filter(product =>
+        product.name
+          .toLocaleLowerCase()
+          .includes(event.target.value.toLocaleLowerCase())
+      )
+
+      setFilteredProducts(filteredProducts)
+    },
+    [products]
+  )
+
   return (
     <div className={`search `.concat(className)}>
       <input
@@ -17,6 +35,7 @@ export const Search: React.FC<SearchProps> = ({ className }) => {
         id="search"
         className="search__input"
         placeholder="O que deseja encontrar?"
+        onChange={handleSearch}
       />
 
       <SearchIcon />
@@ -32,25 +51,18 @@ export const Search: React.FC<SearchProps> = ({ className }) => {
         </div>
 
         <ul className="suggestion-box__products">
-          <li>
-            <img src={ProductImage} alt="Product image" />
-            <span>Anel banhado ouro reto com zirconia</span>
-          </li>
+          {filteredProducts.length <= 0 && (
+            <div className="products__not-found">
+              <span> Nenhum produto encontrado.</span>
+            </div>
+          )}
 
-          <li>
-            <img src={ProductImage} alt="Product image" />
-            <span>Anel banhado ouro reto com zirconia</span>
-          </li>
-
-          <li>
-            <img src={ProductImage} alt="Product image" />
-            <span>Anel banhado ouro reto com zirconia</span>
-          </li>
-
-          <li>
-            <img src={ProductImage} alt="Product image" />
-            <span>Anel banhado ouro reto com zirconia</span>
-          </li>
+          {filteredProducts.map(product => (
+            <li key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <span>{product.name}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

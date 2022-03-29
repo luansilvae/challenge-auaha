@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "name": "Anel banhado a ouro com zirconia",
+    "name": "Brincos banhado a ouro com zirconia",
     "image": "https://user-images.githubusercontent.com/86011816/160301130-34aeda40-7d9a-49bc-870c-cd635e7a7071.png",
     "labels": {
       "discount": 20,
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "name": "Anel banhado a ouro com zirconia",
+    "name": "Brincos de Prata",
     "image": "https://user-images.githubusercontent.com/86011816/160301131-a6a3034e-baac-4971-871a-8644ffd75e18.png",
     "labels": {
       "discount": 10,
@@ -46,67 +46,7 @@
   },
   {
     "id": 4,
-    "name": "Anel banhado a ouro com zirconia",
-    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
-    "labels": {
-      "discount": 10,
-      "freeShipping": true,
-      "bestSellers": true
-    },
-    "price": {
-      "oldValue": 188,
-      "actualValue": 100,
-      "installments": 3
-    }
-  },
-  {
-    "id": 5,
-    "name": "Anel banhado a ouro com zirconia",
-    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
-    "labels": {
-      "discount": 10,
-      "freeShipping": true,
-      "bestSellers": true
-    },
-    "price": {
-      "oldValue": 188,
-      "actualValue": 100,
-      "installments": 3
-    }
-  },
-  {
-    "id": 6,
-    "name": "Anel banhado a ouro com zirconia",
-    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
-    "labels": {
-      "discount": 10,
-      "freeShipping": true,
-      "bestSellers": true
-    },
-    "price": {
-      "oldValue": 188,
-      "actualValue": 100,
-      "installments": 3
-    }
-  },
-  {
-    "id": 7,
-    "name": "Anel banhado a ouro com zirconia",
-    "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
-    "labels": {
-      "discount": 10,
-      "freeShipping": true,
-      "bestSellers": true
-    },
-    "price": {
-      "oldValue": 188,
-      "actualValue": 100,
-      "installments": 3
-    }
-  },
-  {
-    "id": 8,
-    "name": "Anel banhado a ouro com zirconia",
+    "name": "Colar banhado a ouro com zirconia",
     "image": "https://user-images.githubusercontent.com/86011816/160301134-b103e13b-8fed-456a-a64e-01c55d17ba2c.png",
     "labels": {
       "discount": 10,
