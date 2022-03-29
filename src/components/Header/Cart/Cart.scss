@@ -71,10 +71,11 @@
         }
 
         .product__info {
+          width: 100%;
           h4 {
             color: var(--dark);
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
           }
 
           span {
